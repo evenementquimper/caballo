@@ -1,0 +1,14 @@
+
+      <div class="header">
+            <navigation></navigation>
+         </div>
+         
+<div ng-repeat="article in articlelist | orderBy : element">
+
+<div class="blog-post col-sm-6">
+    <a href="#/NGarticle/{{article._id}}"><img src="{{article.image}}" alt="image" class="img-responsive"></img></a>
+ <h3 class="blog-post-title">{{article.titre}}</h3>
+  <p class="blog-post-meta">Publié le: {{article.created_at}} by <a href="#/NGarticle">{{article.auteur}}</a></p>
+  <p ng-bind-html="article.contenu | limitTo:66" ng-click="editArticle(article._id)"></p>
+</div>
+        </div>

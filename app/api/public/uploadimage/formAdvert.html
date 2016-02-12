@@ -1,0 +1,58 @@
+<div class="container">
+  <div class="well">
+
+<div class="row" style="margin-top:30px">
+    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+
+          <h3 class="text-center">Ajouter une image à votre annonce</h3>
+        <hr class="colorgraph">
+         
+          <form class="form" ng-controller="MyCtrl as up" name="up.upload_form">
+             <fieldset>
+            <div class="col-md-6">
+                    <input class="file"
+                           type="file" 
+                           ngf-select 
+                           ng-model="up.file" 
+                           name="file" 
+                           ngf-pattern="'image/*'"
+                           accept="image/*" 
+                           ngf-max-size="20MB" 
+
+                           />
+                    Image : <img style="width:100px;" ngf-thumbnail="up.file"/>
+                    <i ng-show="up.upload_form.file.$error.required">*required</i><br>
+                    <i ng-show="up.upload_form.file.$error.maxSize">File too large 
+                        {{up.file.size / 1000000|number:1}}MB: max 20M</i>
+                    <button class="btn-sm btn-primary" type="submit" ng-click="up.submit()">Ajouter</button>
+                    <p>{{up.progress}}</p>
+                </div>
+       
+       
+             </fieldset>
+           </form>
+  </div>
+</div>
+
+
+<div class="row" style="margin-top:10px"> 
+     <div class="text-center">
+        <a href="#/adverts"  class="btn btn-danger" >Voir les annonces <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a>
+
+    </div>  
+    <br>
+    <div class="text-center">
+        <a href="#/" class="btn btn-primary">Retour</a>
+      
+</div>
+</div>
+
+
+
+
+
+
+
+
+</div>
+</div>

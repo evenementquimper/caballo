@@ -1,0 +1,88 @@
+
+  <div class="header">
+   <navigation></navigation>
+    </div>
+        <!-- Add your site or application content here -->
+      
+
+       <div class="topp">  
+    <h1 class="text-center">TimeShareApp</h1>
+    <h2 class="text-center">Le site qui existe déjà, mais pas en AngularJs</h2>
+    </div>  
+    <div class="container" >
+
+
+    <div class="row"> 
+        <div class="text-center">
+            <h2>Les dernières annonces</h2>
+        </div>
+       <div class="col-md-6 frontService">
+        
+                    <h1 style="border: 2px solid; border-color: rgba(199, 196, 196, 0.52);" class="page-header text-center">Offres de services</h1>
+
+                    <div style="border: 1px solid rgba(140, 137, 137, 0.45); margin-bottom:10px" ng-repeat="advert in adverts| filter: {type:'offre'} |orderBy: '-created_at'| limitTo:3">
+                        <div class="media" style="border-bottom: 1px solid rgba(159, 159, 160, 0.25);">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" style="width:150px; height:120px;" ng-src="uploads/{{advert.media}}">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">{{advert.title}}</h3>
+                                <ul class="list-unstyled">
+                                <li><i class="fa fa-calendar"></i>&nbsp;Le: {{advert.created_at | date :'dd MMM yyyy'}}</li>
+                                <li><i class="fa fa-map"></i><span class="text-capitalize">&nbsp;{{advert.regions}} </span></li>
+                                <li><i class="fa fa-sitemap"></i><span class="text-capitalize">&nbsp;{{advert.categories}} </span></li>                                         
+                                </ul>
+                                <p class="text-capitalize"><i class="fa fa-user"></i>&nbsp;{{advert.author}}</p>
+                           </div>
+              
+                        </div>
+                        <p style="text-align: left; margin-left: 10px;">{{advert.content}}</p>
+                        <hr class="colorgraph">
+                    </div>
+
+               
+            
+        </div><!-- toto-->
+       <div class="col-md-6 frontService">
+        
+                    <h1 style="border: 2px solid; border-color: rgba(199, 196, 196, 0.52);" class="page-header text-center">Demandes de services</h1>
+
+                    <div style="border: 1px solid rgba(140, 137, 137, 0.45); margin-bottom:10px" ng-repeat="advert in adverts| filter: {type:'demande'}|orderBy: '-created_at'| limitTo:3 ">
+                        <div class="media" style="border-bottom: 1px solid rgba(159, 159, 160, 0.25);">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" style="width:150px; height:120px;" ng-src="uploads/{{advert.media}}">
+                            </a>
+                            <div class="media-body">
+                                <h3 class="media-heading">{{advert.title}}</h3>
+                                <ul class="list-unstyled">
+                                <li><i class="fa fa-calendar"></i>&nbsp;Le: {{advert.created_at | date :'dd MMM yyyy'}}</li>
+                                <li><i class="fa fa-map"></i><span class="text-capitalize">&nbsp;{{advert.regions}} </span></li>
+                                <li><i class="fa fa-sitemap"></i><span class="text-capitalize">&nbsp;{{advert.categories}} </span></li>                                         
+                                </ul>
+                                <p class="text-capitalize"><i class="fa fa-user"></i>&nbsp;{{advert.author}}</p>
+                           </div>
+              
+                        </div>
+                        <p style="text-align: left; margin-left: 10px;">{{advert.content}}</p>
+                        <hr class="colorgraph">
+                    </div>
+
+               
+            
+        </div>
+    
+</div>
+
+
+<hr class="colorgraph">
+<div class="row">
+                <div class="col-xs-12 col-md-6"> <a href="#/adverts" class="btn btn-primary btn-block btn-lg">Voir plus d'annonces&nbsp;&nbsp;<span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span></a></div>
+                <div class="col-xs-12 col-md-6"> <a href="#/formAdvert" class="btn btn-success btn-block btn-lg">Déposer une annonce</a></div>
+</div>
+    
+
+</div>
+
+
+
+           

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Blog Template for Bootstrap</title>
+
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-dialog-service/dist/dialogs.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="bower_components/angular-date-picker/angular-date-picker.css" />
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template  <link href="blog.css" rel="stylesheet"> -->
+    
+         <link rel="stylesheet" href="styles/blog.css">
+        <!-- build:css({.tmp,public}) styles/main.css -->
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body ng-app="caballoApp">
+      <!-- /.blog-masthead   
+    <div class="blog-masthead">
+      <div class="container">
+        <nav class="blog-nav">
+          <a class="blog-nav-item active" href="#">Home</a>
+          <a class="blog-nav-item" href="#">New features</a>
+          <a class="blog-nav-item" href="#">Press</a>
+          <a class="blog-nav-item" href="#">New hires</a>
+          <a class="blog-nav-item" href="#">About</a>
+        </nav>
+      </div>
+    </div>
+ -->
+
+    <div class="container">
+
+      <div class="blog-header">
+        <h1 class="blog-title">Caballo Breton</h1>
+        <p class="lead blog-description">Blog de Yann Stephan.</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-8 blog-main">
+<div ng-view="">
+</div>
+          <nav>
+            <ul class="pager">
+              <li><a href="#">Previous</a></li>
+              <li><a href="#">Next</a></li>
+            </ul>
+          </nav>
+
+        </div><!-- /.blog-main -->
+
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          <div class="sidebar-module sidebar-module-inset">
+            <h4>About</h4>
+            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          </div>
+          <div class="sidebar-module">
+            <h4>Archives</h4>
+            <ol class="list-unstyled">
+              <li><a href="#">March 2014</a><span class="badge">14</span></li>
+              <li><a href="#">February 2014</a></li>
+              <li><a href="#">January 2014</a></li>
+              <li><a href="#">December 2013</a></li>
+              <li><a href="#">November 2013</a></li>
+              <li><a href="#">October 2013</a></li>
+              <li><a href="#">September 2013</a></li>
+              <li><a href="#">August 2013</a></li>
+              <li><a href="#">July 2013</a></li>
+              <li><a href="#">June 2013</a></li>
+              <li><a href="#">May 2013</a></li>
+              <li><a href="#">April 2013</a></li>
+            </ol>
+          </div>
+              <div class="sidebar-module">
+            <h4>Sites, Blog</h4>
+            <ol class="list-unstyled">
+            <li><a href = "http://www.quimperfootingloisirs.fr/" class = "thumbnail"><img src = "/images/QFLBandeau.jpg" alt = "Quimper footing loisir"></a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+          <div class="sidebar-module">
+            <h4>Sponsors</h4>
+            <ol class="list-unstyled">
+            <li><a href = "http://www.runandswim.com/" class = "thumbnail"><img src = "/images/logo-runswim.png" alt = "run swim logo"></a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Facebook</a></li>
+            </ol>
+          </div>
+        </div><!-- /.blog-sidebar -->
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+    <footer class="blog-footer">
+      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+      <p>
+        <a href="#">Back to top</a>
+      </p>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+        <!-- build:js scripts/vendor.js -->
+    <!-- bower:js     endbower -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-translate/angular-translate.js"></script>
+    <script src="bower_components/angular-dialog-service/dist/dialogs.js"></script>
+    <script src="bower_components/angular-dialog-service/dist/dialogs-default-translations.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+    <script src="bower_components/angular-date-picker/angular-date-picker.js"></script>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug 
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js">
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+-->
+    <script src="app.js"></script>
+    <script src="routes.js"></script>
+             <!-- -->
+        <script src="home/homeController.js"></script>
+
+        <!--        -->
+        <script src="common/directives/navigation/navigation.directive.js"></script>
+        <script src="common/directives/navigation/navigationCtrl.js"></script>
+
+        <script src="common/directives/timevalid/timevalid.directive.js"></script>
+        <script src="common/directives/timevalid/timevalidCtrl.js"></script>
+
+
+                 <!-- -->
+        <script src="common/services/authentication.service.js"></script>
+         <!-- -->
+        <script src="users/login/loginCtrl.js"></script>
+        <script src="users/register/registerCtrl.js"></script>
+        <script src="users/profile/profileCtrl.js"></script>
+        <script src="uploadimage/uploadimageCtrl.js"></script>
+        <script src="scripts/controllers/article.js"></script>
+        <script src="scripts/controllers/onearticle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<div>
+<h1>
+Contact List App
+<input ng-model="test">{{test}}
+</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+<td>
+<input class="form-control" ng-model="article.titre">
+</td>
+<td>
+<textarea class="form-control" ng-model="article.contenu"></textarea>
+</td>
+<td>
+<button class="btn btn-primary" ng-click="addArticle()">Add Article</button>
+</td>
+<td>
+<button class="btn btn-info" ng-click="updateArticle()">Update</button>&nbsp;&nbsp;
+<button class="btn btn-info" ng-click="deselect()">Clear</button>
+</td>
+        </tr>
+
+  <tr ng-repeat="article in articlelist">
+            <td>
+<div class="blog-post">
+ <h2 class="blog-post-title">{{article.titre}}</h2>
+  <p class="blog-post-meta">January 1, 2014 by <a href="#">Mark</a></p>
+  <p>{{article.contenu}}</p>
+</div>
+            </td>
+            <td>{{article.titre}}</td>
+            <td><i class="icon-plus-sign"></i></td>
+            <div class="view-animate-container">
+                <div ng-view class="view-animate">
+                    <td>{{article.contenu}}</td>
+                    <td><i class="icon-edit"></i></td>
+                </div>
+            
+            </div>
+            <td><button class="btn btn-danger" ng-click="removeArticle(article._id)">Remove</button></td>
+            <td>
+<button class="btn btn-warning" ng-click="editArticle(article._id)">Edit</button>
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+</div>

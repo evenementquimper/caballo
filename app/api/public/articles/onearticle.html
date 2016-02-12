@@ -1,0 +1,76 @@
+     <div class="header">
+            <navigation></navigation>
+         </div>
+<div class="blog-post">
+
+
+
+    <img src="{{article.image}}" alt="image" class="img-responsive">
+
+              <form class="form" ng-controller="MyCtrl as up" name="up.upload_form">
+             <fieldset>
+            <div class="col-md-6">
+                    <input class="file"
+                           type="file" 
+                           ngf-select 
+                           ng-model="up.file" 
+                           name="file" 
+                           ngf-pattern="'image/*'"
+                           accept="image/*" 
+                           ngf-max-size="20MB" 
+
+                           />
+                    Image : <img class="img-responsive" ngf-thumbnail="up.file"/>
+                    <i ng-show="up.upload_form.file.$error.required">*required</i><br>
+                    <i ng-show="up.upload_form.file.$error.maxSize">File too large 
+                        {{up.file.size / 1000000|number:1}}MB: max 20M</i>
+                    <button class="btn-sm btn-primary" type="submit" ng-click="up.submit()">Ajouter</button>
+                    <p>{{up.progress}}</p>
+                </div>
+       <!-- style="width:100px;" -->
+       
+             </fieldset>
+           </form>
+
+ <h3 class="blog-post-title">{{article.titre}}</h3>
+  <p class="blog-post-meta">Publié le: {{article.created_at}} par <a href="#/NGarticle">{{article.auteur}}</a></p>
+  <p ng-bind-html="article.contenu"></p>
+
+<form class="well">
+          <tr>
+            <h4>Lien image</h4>
+            <td>
+<input class="form-control" ng-model="article.image">
+</td>
+<h4>Zatopek source</h4>
+<td>
+<input class="form-control" ng-model="article.zatopek">
+</td>
+<h4>Auteur</h4>
+<td>
+  
+<input class="form-control" ng-model="article.auteur">
+</td>
+<td>
+<timevalid></timevalid>
+</td>
+<td>
+    <h4>Titre</h4>
+<input class="form-control" ng-model="article.titre">
+</td>
+<td>
+    <h4>Texte (html)</h4>
+<textarea class="form-control" ng-model="article.contenu"></textarea>
+</td>
+<td>
+<button class="btn btn-primary" ng-click="addArticle()">Add Article</button>
+
+</td>
+<td>
+<button class="btn btn-info" ng-click="updateArticle()">Update</button>&nbsp;&nbsp;
+<button class="btn btn-info" ng-click="deselect()">Clear</button>
+<button class="btn btn-info" ng-click="removeArticle(article._id)">Delete</button>
+</td>
+        </tr>
+</form>
+</div>
