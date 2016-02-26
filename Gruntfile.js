@@ -22,7 +22,7 @@ module.exports = function(grunt) {
   var appConfig = {
     app: appPath,
     appApi: appPath + '/api',
-    appPublic: appPath + '/public',
+    appPublic: appPath + '/api/public',
     appTest: appPath + '/test',
     distApi: distPath + '/api',
     distPublic: distPath + '/public',

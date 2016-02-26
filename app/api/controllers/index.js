@@ -3,16 +3,8 @@ var express = require('express')
 
 router.use(express.static(__dirname + '/../public'))
 
-//router.use('/api/todos', require('./todos'))
-//router.use('/', require('./accountCtrl'))
 router.use('/', require('./articleCtrl'))
 router.use('/api/users', require('./userCtrl'));
-//router.get('/', function(req, res) {
-  //res.send('Home page')
-//})
-
-//router.get('/about', function(req, res) {
-  //res.send('Learn about us')
-//})
+router.use('/api/upload', require('./uploadCtrl'));
 
 module.exports = router

@@ -12,6 +12,10 @@ $http.get('/article').success(function(response){
 	console.log(response);
 	$scope.articlelist = response;
 	$scope.article = "";
+	  $scope.totalItems = $scope.articlelist.length;
+      $scope.currentPage = 1;
+      $scope.itemsPerPage = 6;
+      $scope.maxSize = 4; //Number of pager buttons to show
 });
 };
 
@@ -57,6 +61,21 @@ function NewVue($scope){
     //this.$location = $location;
     //this.$routeParams = $routeParams;
 
-}
+};
+
+
+        //pagination
+        $scope.setPage = function(pageNo) {
+            $scope.currentPage = pageNo;
+        };
+
+        $scope.pageChanged = function() {
+            //console.log('Page changed to: ' + $scope.currentPage);
+        };
+
+        $scope.setItemsPerPage = function(num) {
+            $scope.itemsPerPage = num;
+            $scope.currentPage = 1; //reset to first paghe
+        }
 
 });
