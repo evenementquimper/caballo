@@ -5,13 +5,13 @@
 
 
 
-    <img src="../images/{{article.image}}" alt="image" class="img-responsive">
+    <img src="uploads/{{article.image}}" alt="image" class="img-responsive">
 
  <h3 class="blog-post-title">{{article.titre}}</h3>
   <p class="blog-post-meta">Publié le: {{article.created_at | date:"dd/MM/yyyy"}} par {{article.auteur}}</p>
   <p class="text-justify" ng-bind-html="article.contenu"></p>
 
-<div class="well">
+<div ng-if="isLoggedIn" class="well">
 <tr>
   <td>
 <h4>Image:</h4>

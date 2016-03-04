@@ -1,9 +1,9 @@
 'use strict';
 //doc for dialog: https://github.com/m-e-conroy/angular-dialog-service  , $http, dialogs
 //
-  //angular.module('caballoApp')
+  //angular.module('caballoApp')  , authentication
   angular.module('caballoApp')
-.controller('OneArticleCtrl', function($scope, $http, dialogs, $routeParams, Upload, $window) {
+.controller('OneArticleCtrl', function($scope, $http, dialogs, $routeParams, Upload, $window, $location, authentication) {
 
 
 var refresh = function(){
@@ -63,7 +63,7 @@ function NewVue($scope){
         console.log('datafile', file);
         $scope.article.image = file.name;
         Upload.upload({
-            url: 'http://localhost:3000/api/upload', //webAPI exposed to upload the file
+            url: 'http://82.245.202.35:3000/api/upload', //webAPI exposed to upload the file
             data: {
                 file: file 
             } //pass file as data, should be user ng-model
@@ -177,6 +177,25 @@ function NewVue($scope){
     }
 /////////////////////////////////////////////////////////////////
 
+
+/////////////////////////////Auth////////////////////////////////
+
+
+        //var vm = this;
+
+        //vm.currentPath = $location.path();
+
+        $scope.isLoggedIn = authentication.isLoggedIn();
+
+        //vm.currentUser = authentication.currentUser();
+
+        //vm.logout = function() {
+          //  authentication.logout();
+            //$location.path('/');
+        //};
+
+        //vm.page = $location.path();
+/////////////////////////////////////////////////////////////////
 });
 
 

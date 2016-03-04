@@ -11,11 +11,28 @@ var refresh = function(){
 $http.get('/article').success(function(response){
 	console.log(response);
 	$scope.articlelist = response;
+	var list = $scope.articlelist;
 	$scope.article = "";
 	  $scope.totalItems = $scope.articlelist.length;
       $scope.currentPage = 1;
       $scope.itemsPerPage = 6;
       $scope.maxSize = 4; //Number of pager buttons to show
+
+      for ( var i = 0; i < list.length; i++) {
+  // Ceci sera exécuté 5 fois
+  // la variable "pas" ira de 0 à 4
+  //$scope.
+  var art_date = new Date();
+  art_date = list[i].created_at;
+  //var c_annnees = list[i].created_at.getYear(); 
+  //var c_mois = list[i].created_at.getMonth();
+  if (list[i].created_at)
+  {
+
+  }
+  console.log("article id: "+list[i]._id);
+  console.log("date de création: "+art_date);
+}
 });
 };
 
