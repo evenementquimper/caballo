@@ -87,7 +87,13 @@ h6, .h6 {
   margin-bottom: 0;
   font-size: 60px;
   font-weight: normal;
+  color: #428bca;
+  padding-bottom: 115px;
+    background-image: url(../images/drapeau.png);
+   background-repeat: no-repeat;
+    background-position: left top;
 }
+
 .blog-description {
   font-size: 20px;
   color: #999;
