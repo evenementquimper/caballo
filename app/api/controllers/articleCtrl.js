@@ -96,46 +96,46 @@ router.delete('/article/:article_id', function(req, res) {
 });
 
 /** API path that will upload the files */
-router.post('/article/upload', function(req, res) {
-    var storage = multer.diskStorage({ //multers disk storage settings
-        destination: function(req, file, cb) {
-            cb(null, 'public/uploads/')
-        },
-        filename: function(req, file, cb) {
-            var datetimestamp = Date.now();
-            cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length - 1])
-            console.log('FILE: ', file);
-        }
+// router.post('/article/upload', function(req, res) {
+//     var storage = multer.diskStorage({ //multers disk storage settings
+//         destination: function(req, file, cb) {
+//             cb(null, 'public/uploads/')
+//         },
+//         filename: function(req, file, cb) {
+//             var datetimestamp = Date.now();
+//             cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length - 1])
+//             console.log('FILE ArticleCtrl: ', file);
+//         }
 
-    });
+//     });
 
-    var upload = multer({ //multer settings
-        storage: storage
-    }).single('file');
+//     var upload = multer({ //multer settings
+//         storage: storage
+//     }).single('file');
 
-    console.log("Chargement fichier...");
+//     console.log("Chargement fichier...");
 
-    upload(req, res, function(err) {
+//     upload(req, res, function(err) {
 
-        if (err) {
-            console.log(err);
-            res.json({
-                error_code: 1,
-                err_desc: err
-            });
-            return;
-        }
-        media = req.file.filename;
-        console.log('SavedMedia:', media);
-        res.json({
-            error_code: 0,
-            err_desc: null
-        });
+//         if (err) {
+//             console.log(err);
+//             res.json({
+//                 error_code: 1,
+//                 err_desc: err
+//             });
+//             return;
+//         }
+//         media = req.file.filename;
+//         console.log('SavedMedia:', media);
+//         res.json({
+//             error_code: 0,
+//             err_desc: null
+//         });
 
 
-    });
+//     });
 
-});
+// });
 
 
 module.exports = router

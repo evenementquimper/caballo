@@ -17,13 +17,13 @@ var passport = require('passport');
 router.post('/', function (req, res) {
     var storage = multer.diskStorage({//multers disk storage settings
         destination: function (req, file, cb) {
-            cb(null, global.uploadDir)
+            cb(null, 'public/uploads/')
         },
         filename: function (req, file, cb) {
             //var datetimestamp = Date.now();
             //cb(null, file.fieldname + '-' + datetimestamp + '.' + file.originalname.split('.')[file.originalname.split('.').length - 1])
               cb(null,file.originalname)
-            console.log('FILE: ', file);
+            console.log('FILE uploadCtrl: ', file);
         }
     });
     var upload = multer({//multer settings
@@ -43,6 +43,7 @@ router.post('/', function (req, res) {
         media = req.file.filename;
         console.log('SavedMedia:', media);
         res.json({
+            media: media,
             error_code: 0,
             err_desc: null
         });

@@ -70,7 +70,7 @@ function NewVue($scope){
 
         }).then(function(resp) { //upload function returns a promise
             if (resp.data.error_code === 0) { //validate success
-                $window.alert('Success ' + resp.config.data.file.name + ' uploaded.');
+                $window.alert('Success ' + resp.config.data.file.name + ' uploaded. et:'+resp.media);
                 //console.log('RespConfig' + resp);
 
                 //$http.put('/api/adverts/' + $scope.advert._id, $scope.advert).success(function(response) {
